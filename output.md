@@ -7,11 +7,12 @@ percipiramo kao zbirke podataka pa ih uobičajeno jednostavno zovemo
 beskonačno različitih vrijednosti. Također, sjetimo se sljedećeg
 programa:
 
-::: python
-Nepoznati podatak za vrijeme izvršavanja
-programalisting:nepoznati_podatak text = input(\"Unesi tekst i pritisni
-\<enter\>: \") print(text) input(\"Pritisni \<enter\> za kraj\")
-:::
+``` python
+# Nepoznati podatak za vrijeme izvršavanja
+nepoznati_podatak = input("Unesi tekst i pritisni <enter>: ")
+print(nepoznati_podatak)
+input("Pritisni <enter> za kraj")
+```
 
 U programu prikazanom u primjeru
 [\[listing:nepoznati_podatak\]](#listing:nepoznati_podatak){reference-type="ref"
@@ -84,12 +85,33 @@ operacije s brojevima došle \"s papira\", najčešće radnje s brojevima
 provodimo upravo kroz operatore jer nam je tako najprirodnije i najkraće
 pisati.
 
-::: python
-Najčešće operacije s brojevimalisting:brojevi_operacije1 \>\>\> 12 + 8
-20 \>\>\> 12 - 8 4 \>\>\> 12 \* 8 96 \>\>\> 12 \*\* 8 \# potenciranje,
-12 na 8 429981696 \>\>\> 12 / 8 1.5 \>\>\> 12 // 8 \# cjelobrojno
-dijeljenje 1 \>\>\> 12 4
-:::
+``` python
+# Najčešće operacije s brojevima
+
+# Zbrajanje
+12 + 8
+20
+
+# Oduzimanje
+12 - 8
+4
+
+# Množenje
+12 * 8
+96
+
+# Potenciranje
+12 ** 8
+429981696
+
+# Dijeljenje
+12 / 8
+1.5
+
+# Cjelobrojno dijeljenje
+12 % 8
+1
+```
 
 Operatore nećemo podrobnije ovdje opisivati jer su detaljnije prikazani
 u poglavlju [\[radnje\]](#radnje){reference-type="ref"
@@ -106,16 +128,36 @@ donosi modul `math`{.python}, a zadržimo se za sada na brojevima, dok će
 o modulima biti riječ u poglavlju
 [\[moduli\]](#moduli){reference-type="ref" reference="moduli"}:
 
-::: python
-Još operacija s brojevimalisting:brojevi_operacije2 \>\>\> round(3.1416)
-\# funkcija za zaokruživanje je ugrađena u Python 3 \>\>\> round(3.1416,
-2) 3.14 \>\>\> import math \# koristiti ćemo modul math pa ga moramo
-uključiti \>\>\> math.ceil(3.1416) \# zaokruži na prvi viši cijeli broj,
-obratno je \"floor\" 4 \>\>\> math.sqrt(625) \# drugi korijen 25.0
-\>\>\> math.sin(45) \# sinus; uključene su i ostale trigonometrijske
-funkcije 0.8509035245341184 \>\>\> math.pi 3.141592653589793 \#
-konstanta $\pi$
-:::
+``` python
+# Još operacija s brojevima
+
+# funkcija za zaokruživanje je ugrađena u Python 3
+round(3.1416)
+3
+
+# zaokruživanje na 2 decimale
+round(3.1416, 2)
+3.14
+
+ # koristit ćemo modul math pa ga moramo uključiti
+import math
+
+# zaokruži na prvi viši cijeli broj, obratno je "floor"
+math.ciel(3.1416)
+4
+
+# drugi korijen
+math.sqrt(625)
+25.0
+
+# sinus; uključene su i ostale trigonometrijske funkcije
+math.sin(45)
+0.8509035245341184
+
+# konstanta pi
+print(math.pi)
+3.141592653589793 
+```
 
 Modul `math`{.python} donosi i mnoge druge mogućnosti, a postoje i
 kompleksna proširenja Pythona orijentirana na rad s brojevima bilo da se
@@ -148,14 +190,36 @@ metodama za usporedbu. Ovakvi operatori i metode služe provjeri
 istinitosti neke tvrdnje odnosno odgovaraju na da-ne pitanja. Pogledajmo
 prvo najčešće operatore za usporedbu brojeva:
 
-::: python
-Usporedba brojevalisting:bool1 \>\>\> x = 2 \# ovo je pridruživanje
-varijabli, a ne provjera jednakosti \>\>\> y = 3 \>\>\> x \< y \# x je
-manje od y True \>\>\> x \>= y \# x je veće ili jednako y False \>\>\> x
-== y \# x je jednako y False \>\>\> x != y \# x je različit od y True
-\>\>\> x + y == 5 \# rezultat izraza \"x + y\" iznosi 5 True \>\>\> x +
-(y == 5) \# što se ovdje dogodilo ??? 2
-:::
+``` python
+# Usporedba brojeva
+
+x = 2  # ovo je pridruživanje varijabli, a ne provjera jednakosti
+y = 3
+
+# x je manje od y
+x < y
+True
+
+# x je veće ili jednako y
+x >= y
+False
+
+# x je jednako y
+x == y
+False
+
+# x je različito od y
+x != y
+True
+
+# rezultat izraza "x + y" iznosi 5
+x + y == 5
+True
+
+# što se ovdje dogodilo???
+x + (y == 5)
+2
+```
 
 Neke detalje smo spomenuli već u uvodu i podrobnije objasnili u
 poglavlju [\[radnje\]](#radnje){reference-type="ref"
@@ -167,19 +231,22 @@ za to postoji poseban operator: `==`{.python}.
 
 Na primjer, u matematici:
 
-::: python
-Znak \"=\" u matematicilisting:bool2 x = 1 \# (pridruživanje: neka x
-bude 1) x + 1 = 2 \# (tvrdnja jednakosti: x + 1 je jednako 2)
-:::
+``` python
+x = 1
+x + 1 == 2  # Ovo je ispravna provjera, vraća True
+```
 
 U Pythonu:
 
-::: python
-Operatori \"=\" i \"==\" u programiranjulisting:bool3 \>\>\> x = 1 \#
-pridruživanje: \"neka x bude 1\", ovo nije izraz pa nema rezultata
-\>\>\> x + 1 == 2 \# provjera jednakosti: \"da li se izraz \"x + 1\"
-evaluira u 2\" True
-:::
+``` python
+# Operatori "=" i "==" u programiranju
+
+x = 1  # pridruživanje: "neka x bude 1", ovo nije izraz pa nema rezultata
+
+# provjera jednakosti: "da li se izraz 'x + 1' evaluira u 2"
+x + 1 == 2
+True
+```
 
 A kako to da je izraz `x + y == 5`{.python} različit od izraza
 `x + (y == 5)`{.python}? Prvi dio odgovora leži u redoslijedu
@@ -201,13 +268,39 @@ aritmetičke operacije s njima. Navedeno je pobliže prikazano u primjeru
 [\[listing:bool_je_broj\]](#listing:bool_je_broj){reference-type="ref"
 reference="listing:bool_je_broj"}.
 
-::: python
-Booleove vrijednosti su (skoro) isto što i 0 i 1listing:bool_je_broj
-\>\>\> n = 42 \>\>\> n + True \# True je jednak 1 43 \>\>\> n - True 41
-\>\>\> n + False \# False je jednak 0 42 \>\>\> n \* False 0 \>\>\> True
-== 1 True \>\>\> True is 1 \# ali True je u memoriji različita
-vrijednost od 1 False \>\>\> True is not 1 True
-:::
+``` python
+# Booleove vrijednosti su (skoro) isto što i 0 i 1
+
+n = 42
+
+# True je jednak 1
+n + True
+43
+
+# True je jednak 1
+n - True
+41
+
+# False je jednak 0
+n + False
+42
+
+# False je jednak 0
+n * False
+0
+
+# Provjera da li je True jednako 1
+True == 1
+True
+
+# Provjera da li je True ista kao 1 (True je objekt, nije isto kao broj 1)
+True != 1
+False
+
+# Provjera da li je True različito od 1 (True nije isto kao 1 u memoriji)
+True == 1
+True
+```
 
 ### Usporedba drugih vrsta vrijednosti
 
@@ -217,17 +310,28 @@ koncepte (veće, manje, jednako ), ali što je na primjer s tekstom? Tekst
 podržava mnoštvo tvrdnji koje možemo provjeravati, pogledajmo neke od
 njih:
 
-::: python
-Usporedba tekstalisting:bool4 \>\>\> a = 'nešto' \>\>\> b = 'nešto
-drugo' \>\>\> a == b \# većina osnovnih vrsti podataka dopušta provjeru
-jednakosti False \>\>\> 'd' in a \# da li se znak 'd' nalazi u tekstu a
-False \>\>\> 'dr' in b \# da li se znakovi 'drugo' nalaze u tekstu b
-True \>\>\> b.startswith(a) \# posebne provjere se često provode
-posebnim metodama za vrste vrijednosti True \>\>\> s = '122' \>\>\>
-s.isdigit() \# da li se tekst sastoji samo od brojeva? True \>\>\> s =
-'abc' \# da li se tekst sastoji samo od slova? \>\>\> s.isalpha() True
-\>\>\> s = 'abc4' \>\>\> s.isalpha() False
-:::
+``` python
+# Usporedba teksta 
+a = 'nešto'
+b = 'nešto drugo'
+a == b # većina osnovnih vrsti podataka dopušta provjeru jednakosti
+False
+'d' in a # da li se znak 'd' nalazi u tekstu a
+False
+'dr' in b # da li se znakovi 'drugo' nalaze u tekstu b
+True
+b.startswith(a) # posebne provjere se često provode posebnim metodama za vrste vrijednosti
+True
+s = '122'
+s.isdigit() # da li se tekst sastoji samo od brojeva?
+True
+s = 'abc' # da li se tekst sastoji samo od slova?
+s.isalpha()
+True
+s = 'abc4'
+s.isalpha()
+False
+```
 
 ### Koje vrijednosti postoje?
 
@@ -245,14 +349,21 @@ znakova, popis s 0 elemenata itd. S mnogim zbirkama, odnosno
 *strukturama podataka*, ćemo se sresti u idućim poglavljima jer su
 strukture podataka nezaobilazna tema za programiranje.
 
-::: python
-Koje vrijednosti \"postoje\"?listing:bool5 \>\>\> bool(42) True \>\>\>
-bool(0) False \>\>\> bool(None) \# vrijednost None je opisana u nastavku
-ovog poglavlja False \>\>\> bool('neki tekst') \# tekst koji sadrži
-barem jedan znak True \>\>\> bool(") \# prazan tekstovni niz, tekst od
-nula znakova False \>\>\> bool(\[\]) \# prazan popis, više o popisima
-kasnije False \# ali zapamtimo da se prazne zbirke procjenjuju kao False
-:::
+``` python
+# Koje vrijednosti postoje?
+bool(42)
+True
+bool(0)
+False
+bool(None) # vrijednost None je opisana u nastavku ovog poglavlja
+False
+bool('neki tekst') # tekst koji sadrži barem jedan znak
+True
+bool(") # prazan tekstovni niz, tekst od nula znakova
+False
+bool([]) # prazan popis, više o popisima kasnije
+False # ali zapamtimo da se prazne zbirke procjenjuju kao False
+```
 
 ### Booleovi operatori
 
@@ -261,19 +372,39 @@ Također, booleove vrijednosti se mogu kombinirati booleovim operatorima
 odnosno pretvoriti u suprotnu bool vrijednost pomoću operatora
 `not`{.python} koji prethodi varijabli, odnosno vrijednosti. Na primjer:
 
-::: python
-Booleovi operatorilisting:bool6 \>\>\> True and False False \>\>\> True
-or False True \>\>\> not False True \>\>\> True and not False True
+ ``` python
+# Booleovi operatori
+True and False
+False
+True or False
+True
+not False
+True
+True and not False
+True
 
-\# shodno gore navedenom: \>\>\> x = 1 \>\>\> y = 2 \>\>\> x + y == 3
-and x == 1 True \>\>\> x + y == 1000 and x == 1 False \>\>\> x + y ==
-1000 or y == 2 True \>\>\> not x == 1 False
+# shodno gore navedenom:
+x = 1
+y = 2
+x + y == 3 and x == 1
+True
+x + y == 1000 and x == 1
+False
+x + y == 1000 or y == 2
+True not x == 1
+False
 
-\>\>\> a = 'nešto' \>\>\> b = 'nešto drugo' \>\>\> a.startswith('n') and
-b.startswith('n') True \>\>\> a.startswith('n') and b.startswith('x')
-False \>\>\> a.startswith('n') or b.startswith('x') True \>\>\>
-a.startswith('n') and not b.startswith('x') True
-:::
+a = 'nešto'
+b = 'nešto drugo'
+a.startswith('n') and b.startswith('n')
+True
+a.startswith('n') and b.startswith('x')
+False
+a.startswith('n') or b.startswith('x')
+True
+a.startswith('n') and not b.startswith('x')
+True
+```
 
 ## None
 
@@ -286,10 +417,11 @@ zapisati da neka varijabla \"nema vrijednost\".
 Promotrimo, na primjer, razliku između vrijednosti `None`{.python} i
 vrijednosti `0`{.python}.
 
-::: python
-Čemu služi vrijednost None?listing:none broj_knjiga = 0 broj_knjiga =
-None
-:::
+``` python
+#Čemu služi vrijednost None?
+broj_knjiga = 0
+broj_knjiga = None
+```
 
 U slučaju `broj_knjiga = 0`{.python} znači poznatu informaciju: \"nula
 knjiga\". Kada bi se ovaj podatak koristio, na primjer, za broj
