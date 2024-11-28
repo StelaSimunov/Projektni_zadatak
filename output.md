@@ -1,4 +1,4 @@
-# Podaci: Vrijednosti i njihove vrste {#podaci_vrste}
+# Podaci: Vrijednosti i njihove vrste 
 
 Računalo može provoditi radnje samo s *podacima*. Broj 42 je podatak,
 kao i 3.14. Tekst \"Život, svemir i sve!\" je podatak. Ove podatke ne
@@ -13,11 +13,7 @@ programalisting:nepoznati_podatak text = input(\"Unesi tekst i pritisni
 \<enter\>: \") print(text) input(\"Pritisni \<enter\> za kraj\")
 :::
 
-U programu prikazanom u primjeru
-[\[listing:nepoznati_podatak\]](#listing:nepoznati_podatak){reference-type="ref"
-reference="listing:nepoznati_podatak"}, vrijednost varijable
-`text`{.python} je prilikom pisanja programa nepoznata. To je što god da
-je korisnik koji je pokrenuo program unio kad ga je računalo to
+U programu prikazanom u primjeru 3.1, vrijednost varijable **text** je prilikom pisanja programa nepoznata.To je što god da je korisnik koji je pokrenuo program unio kad ga je računalo to
 zatražilo. Drugim riječima, ne samo da postoji beskonačno različitih
 vrijednosti već iste najčešće nisu poznate prilikom pisanja programa.
 Ovo mora biti tako: kada bi sve vrijednosti bile unaprijed zapisane u
@@ -40,10 +36,10 @@ zapis strukturiranih podataka kao i stvaranje kompleksnijih vrsta
 vrijednost pa krenimo s upoznavanjem istih.
 
 U ovom dijelu ćemo objasniti atomske vrijednosti, odnosno cijele i
-decimalne brojeve, booleove vrijednosti i vrijednost `None`{.python}. To
+decimalne brojeve, booleove vrijednosti i vrijednost `None`. To
 su one vrijednosti koje ne možemo raščlaniti na sastavne dijelove.
-Booleove vrijednosti (`True`{.python} i `False`{.python}) i vrijednost
-`None`{.python} su uistinu jednostavne vrijednosti i neće nam trebati
+Booleove vrijednosti (`True` i `False`) i vrijednost
+`None` su uistinu jednostavne vrijednosti i neće nam trebati
 puno da opišemo rad s njima. Brojevi su znatno kompleksnija tema, ali
 rad s njima nam je već bar donekle poznat iz matematike. S druge strane,
 tekst je vrlo važno podrobnije objasniti jer je znatno kompleksnija
@@ -60,16 +56,16 @@ navedenog, tekstu će se posvetiti zasebno poglavlje.
 
 Postoje više vrsta brojeva, a one koje daleko najčešće koristimo su
 cijeli i decimalni brojevi. Ove vrste vrijednosti se u Pythonu nazivaju
-`int`{.python} i `float`{.python} što su relativno standardni nazivi za
+`int` i `float` što su relativno standardni nazivi za
 ove vrste vrijednosti u programiranju i bazama podataka. Riječ
-`int`{.python} je skraćeni oblik engleske riječi *integer* koja doslovno
-znači cijeli broj. Riječ `float`{.python} dolazi od engleskog izraza
+`int` je skraćeni oblik engleske riječi *integer* koja doslovno
+znači cijeli broj. Riječ `float` dolazi od engleskog izraza
 *floating point number* i ovaj koncept je malo problematičniji jer se
 ponešto razlikuje od decimalnih brojeva koji su nam poznati iz
 matematike s ploče u školi. Takve brojeve možemo shvatiti kao računalnu
 aproksimaciju decimalnih brojeva koji omogućuju varijaciju između
 raspona i preciznosti. Ipak, u daleko najvećem broju problema koje
-rješavamo programiranjem, `float`{.python} brojeve možemo shvatiti kao
+rješavamo programiranjem, `float` brojeve možemo shvatiti kao
 decimalne, a razlika nam je jedino važna ukoliko zahtijevamo preciznost
 na jako velikom broju decimala. Također, za razliku od jezika niže
 razine i baza podataka, Python nema više vrsta cijelih i decimalnih
@@ -92,19 +88,14 @@ dijeljenje 1 \>\>\> 12 4
 :::
 
 Operatore nećemo podrobnije ovdje opisivati jer su detaljnije prikazani
-u poglavlju [\[radnje\]](#radnje){reference-type="ref"
-reference="radnje"}. Osim standardnih matematičkih operacija s
+u poglavlju 2. Osim standardnih matematičkih operacija s
 operatorima, Python ima ugrađene dodatne matematičke funkcije i
 konstante mnoge od kojih su dostupne kroz *standardan modul*
-`math`{.python}. \"Modul\" je proširenje mogućnosti Pythona i možemo ga
+`math`. \"Modul\" je proširenje mogućnosti Pythona i možemo ga
 jednostavno shvatiti kao *plug-in*. \"Standardan\" modul znači da se
 radi o modulu koji dolazi s Pythonom i uvijek je dostupan, odnosno koji
 ne zahtijeva dodatan korak instalacije modula. U primjeru
-[\[listing:brojevi_operacije2\]](#listing:brojevi_operacije2){reference-type="ref"
-reference="listing:brojevi_operacije2"} koristimo dodatne funkcije koje
-donosi modul `math`{.python}, a zadržimo se za sada na brojevima, dok će
-o modulima biti riječ u poglavlju
-[\[moduli\]](#moduli){reference-type="ref" reference="moduli"}:
+3.3 koristimo dodatne funkcije koje donosi modul `math`, a zadržimo se za sada na brojevima, dok će o modulima biti riječ u poglavlju 4:
 
 ::: python
 Još operacija s brojevimalisting:brojevi_operacije2 \>\>\> round(3.1416)
@@ -117,11 +108,11 @@ funkcije 0.8509035245341184 \>\>\> math.pi 3.141592653589793 \#
 konstanta $\pi$
 :::
 
-Modul `math`{.python} donosi i mnoge druge mogućnosti, a postoje i
+Modul `math` donosi i mnoge druge mogućnosti, a postoje i
 kompleksna proširenja Pythona orijentirana na rad s brojevima bilo da se
 radi o naprednijoj matematici ili specijalizacijama poput statistike.
 Obzirom da se ovdje u načelu radi ili o poznatim nam matematičkim
-postupcima i funkcijama (u slučaju modula `math`{.python}, to su
+postupcima i funkcijama (u slučaju modula `math`, to su
 mogućnosti poput korjenovanja i trigonometrijskih funkcija) ili pak o
 naprednim područjima nevezanim za osnove programiranja (npr. statistika,
 strojno učenje) no o novim konceptima ovdje možemo stati s prikazom rada
@@ -139,7 +130,7 @@ tvore binarni brojevni sustav putem kojeg kodiramo bilo koje podatke za
 potrebe interakcije s računalnim hardverom odnosno za potrebe pohrane u
 memoriju i izvršavanje instrukcija. U programiranju, ove dvije
 vrijednosti imaju i širu logičku upotrebu, kao što ćemo uskoro vidjeti u
-primjerima. U Pythonu ih nazivamo `True`{.python} i `False`{.python}.
+primjerima. U Pythonu ih nazivamo `True` i `False`.
 
 ### Usporedba brojeva
 
@@ -158,12 +149,11 @@ manje od y True \>\>\> x \>= y \# x je veće ili jednako y False \>\>\> x
 :::
 
 Neke detalje smo spomenuli već u uvodu i podrobnije objasnili u
-poglavlju [\[radnje\]](#radnje){reference-type="ref"
-reference="radnje"}, ali vrijedi ponoviti. Primijetimo operator
-`==`{.python} u izrazu `x == y`{.python}. Rekli smo da operator
-`=`{.python} znači pridruživanje vrijednosti varijabli. Bilo bi
+poglavlju 2, ali vrijedi ponoviti. Primijetimo operator
+`==` u izrazu `x == y`. Rekli smo da operator
+`=` znači pridruživanje vrijednosti varijabli. Bilo bi
 višeznačno koristiti isti znak za operator koji provjerava jednakost pa
-za to postoji poseban operator: `==`{.python}.
+za to postoji poseban operator: `==`.
 
 Na primjer, u matematici:
 
@@ -181,25 +171,22 @@ pridruživanje: \"neka x bude 1\", ovo nije izraz pa nema rezultata
 evaluira u 2\" True
 :::
 
-A kako to da je izraz `x + y == 5`{.python} različit od izraza
-`x + (y == 5)`{.python}? Prvi dio odgovora leži u redoslijedu
+A kako to da je izraz `x + y == 5` različit od izraza
+`x + (y == 5)`? Prvi dio odgovora leži u redoslijedu
 izvršavanja operacija. Kao što je opisano u poglavlju
-[\[radnje\]](#radnje){reference-type="ref" reference="radnje"}, prvo se
-provode aritmetičke operacije pa zatim operacije usporedbe. U izrazu
-`x + y == 5`{.python} prvo se provodi zbrajanje pa tek zatim usporedba.
-Taj izraz je, dakle, isto što i `(x + y) == 5`{.python}. U izrazu
-`x + (y == 5)`{.python} smo zagradama promijenili redoslijed izvršavanja
-operacija: prvo se provodi usporedba `y == 5`{.python} koja vraća
-rezultat `False`{.python}. Zatim se provodi zbrajanje, a u ovom slučaju
-to je izraz `x + False`{.python}. False je ekvivalentan vrijednosti 0 pa
-je taj izraz isto što i `x + 0`{.python} te iznosi vrijednosti varijable
-`x`{.python}, odnosno `2`{.python}. Za redoslijed izvršavanja operatora
+2, prvo se provode aritmetičke operacije pa zatim operacije usporedbe. U izrazu
+`x + y == 5` prvo se provodi zbrajanje pa tek zatim usporedba.
+Taj izraz je, dakle, isto što i `(x + y) == 5`. U izrazu
+`x + (y == 5)` smo zagradama promijenili redoslijed izvršavanja
+operacija: prvo se provodi usporedba `y == 5` koja vraća
+rezultat `False`. Zatim se provodi zbrajanje, a u ovom slučaju
+to je izraz `x + False`. False je ekvivalentan vrijednosti 0 pa
+je taj izraz isto što i `x + 0` te iznosi vrijednosti varijable
+`x`, odnosno `2`. Za redoslijed izvršavanja operatora
 znamo kako iz prijašnjeg poglavlja tako i iz osnova matematike. Za
 vrijednosti True i False vrijedi zapamtiti da su ekvivalentne
-vrijednostima `1`{.python} i `0`{.python} i da mnogi jezici dopuštaju
-aritmetičke operacije s njima. Navedeno je pobliže prikazano u primjeru
-[\[listing:bool_je_broj\]](#listing:bool_je_broj){reference-type="ref"
-reference="listing:bool_je_broj"}.
+vrijednostima `1` i `0` i da mnogi jezici dopuštaju
+aritmetičke operacije s njima. Navedeno je pobliže prikazano u primjeru 3.7.
 
 ::: python
 Booleove vrijednosti su (skoro) isto što i 0 i 1listing:bool_je_broj
@@ -233,14 +220,14 @@ s.isdigit() \# da li se tekst sastoji samo od brojeva? True \>\>\> s =
 
 Također, bilo koju vrijednost možemo reducirati na bool vrijednost
 odnosno na \"postoji/ne-postoji\". Velika većina vrijednosti se
-procjenjuje kao `True`{.python} jer se odnosi na vrijednost koju
+procjenjuje kao `True` jer se odnosi na vrijednost koju
 smatramo \"postojećom\". Kod brojeva je ovdje očito o čemu se priča, 0
-se procjenjuje kao `False`{.python}, a svi ostali brojevi kao
-`True`{.python}. Dapače, već smo vidjeli su vrijednosti `True`{.python}
-i `False`{.python} ekvivalentne brojevima 1 i 0 te da je čak s njima i
+se procjenjuje kao `False`, a svi ostali brojevi kao
+`True`. Dapače, već smo vidjeli su vrijednosti `True`
+i `False` ekvivalentne brojevima 1 i 0 te da je čak s njima i
 moguće provoditi aritmetičke operacije. Kod ostalih vrijednosti,
 međutim, također postoje \"prazne vrijednosti\" koje se smatraju
-`False`{.python}. Riječ je u načelu o praznim \"zbirkama\": tekst od 0
+`False`. Riječ je u načelu o praznim \"zbirkama\": tekst od 0
 znakova, popis s 0 elemenata itd. S mnogim zbirkama, odnosno
 *strukturama podataka*, ćemo se sresti u idućim poglavljima jer su
 strukture podataka nezaobilazna tema za programiranje.
@@ -257,9 +244,9 @@ kasnije False \# ali zapamtimo da se prazne zbirke procjenjuju kao False
 ### Booleovi operatori
 
 Također, booleove vrijednosti se mogu kombinirati booleovim operatorima
-`and`{.python} i `or`{.python}. Bool vrijednost se može i negirati,
+`and` i `or`. Bool vrijednost se može i negirati,
 odnosno pretvoriti u suprotnu bool vrijednost pomoću operatora
-`not`{.python} koji prethodi varijabli, odnosno vrijednosti. Na primjer:
+`not` koji prethodi varijabli, odnosno vrijednosti. Na primjer:
 
 ::: python
 Booleovi operatorilisting:bool6 \>\>\> True and False False \>\>\> True
@@ -277,36 +264,36 @@ a.startswith('n') and not b.startswith('x') True
 
 ## None
 
-`None`{.python} je jedinstvena vrijednost koja označava nepostojanje
+`None` je jedinstvena vrijednost koja označava nepostojanje
 vrijednosti. Drugim riječima, postoji samo jedna moguća vrijednost čija
-vrsta je `None`{.python} i ta vrijednost je `None`{.python}. Možda zvuči
+vrsta je `None` i ta vrijednost je `None`. Možda zvuči
 čudno, ali ova vrijednost je vrlo korisna kada je potrebno eksplicitno
 zapisati da neka varijabla \"nema vrijednost\".
 
-Promotrimo, na primjer, razliku između vrijednosti `None`{.python} i
-vrijednosti `0`{.python}.
+Promotrimo, na primjer, razliku između vrijednosti `None` i
+vrijednosti `0`.
 
 ::: python
 Čemu služi vrijednost None?listing:none broj_knjiga = 0 broj_knjiga =
 None
 :::
 
-U slučaju `broj_knjiga = 0`{.python} znači poznatu informaciju: \"nula
+U slučaju `broj_knjiga = 0` znači poznatu informaciju: \"nula
 knjiga\". Kada bi se ovaj podatak koristio, na primjer, za broj
 posuđenih knjiga, vrijednost 0 bi značila da nema posuđenih knjiga. S
-druge strane, vrijednost `None`{.python} kod
-`broj_knjiga = None`{.python}, pak, znači: \"broj knjiga je nepoznat\".
-Vrijednost `None`{.python} posebno je korisna za rad s podacima i dizajn
+druge strane, vrijednost `None` kod
+`broj_knjiga = None`, pak, znači: \"broj knjiga je nepoznat\".
+Vrijednost `None` posebno je korisna za rad s podacima i dizajn
 vlastitih funkcija (što je prikazano kasnije). U drugim jezicima i
-bazama podataka, vrijednost `None`{.python} se često naziva
-`null`{.python}.
+bazama podataka, vrijednost `None` se često naziva
+`null`.
 
 Za razliku od brojeva, teksta i booleovih vrijednosti, s vrijednosti
-`None`{.python} nemamo posebne radnje jer za ovu vrstu vrijednosti
+`None` nemamo posebne radnje jer za ovu vrstu vrijednosti
 nemaju smisla.
 
 [^1]: Koja se u mnogim drugim jezicima i bazama podataka često zove
-    `null`{.python}.
+    `null`.
 
 [^2]: Ako pak krenete programirati, na primjer, rakete i svemirske
     brodove, informirajte se. Barem je jedna već pala radi pogrešnih
